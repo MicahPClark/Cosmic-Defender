@@ -768,10 +768,10 @@ class Player {
   }
   
   move() {
-    if (keyIsDown(LEFT_ARROW)) this.x -= this.speed;
-    if (keyIsDown(RIGHT_ARROW)) this.x += this.speed;
-    if (keyIsDown(UP_ARROW)) this.y -= this.speed;
-    if (keyIsDown(DOWN_ARROW)) this.y += this.speed;
+    if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) this.x -= this.speed; // 65 is 'A'
+    if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) this.x += this.speed; // 68 is 'D'
+    if (keyIsDown(UP_ARROW) || keyIsDown(87)) this.y -= this.speed; // 87 is 'W'
+    if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) this.y += this.speed; // 83 is 'S'
     
     // Update angle to point towards mouse
     this.angle = atan2(mouseY - this.y, mouseX - this.x);
